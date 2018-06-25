@@ -1,0 +1,53 @@
+{
+  "name": "go",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "lint:js": "npm run lint:eslint -- . ",
+    "lint": "npm run lint:js",
+    "lint:eslint": "eslint --ignore-path .gitignore --ignore-pattern internals/scripts --ignore-pattern generated.*",
+    "validate": "npm ls",
+    "sonar": "sonar-scanner",
+    "postinstall": "rn-nodeify --install buffer,events,assert --hack",
+    "reset": "rm -rf ./node_modules && rm -rf $TMPDIR/react-* && rm -rf ./ios/build && yarn cache clean && npm install"
+  },
+  "dependencies": {
+    "assert": "1.4.1",
+    "babel-plugin-module-resolver": "3.1.1",
+    "babel-plugin-transform-remove-console": "6.9.0",
+    "buffer": "4.9.1",
+    "events": "1.1.1",
+    "eslint": "4.19.1",
+    "key-mirror": "1.0.1",
+    "moment": "2.22.0",
+    "react": "16.3.1",
+    "react-native": "0.55.4",
+    "react-native-i18n": "2.0.9",
+    "react-native-navigation": "1.1.472",
+    "react-native-secure-key-store": "^1.0.9",
+    "react-native-simple-store": "^1.3.0",
+    "react-redux": "5.0.6",
+    "redux": "3.7.2",
+    "redux-logger": "3.0.6",
+    "redux-saga": "0.16.0",
+    "redux-thunk": "2.2.0",
+    "rn-nodeify": "10.0.0",
+    "socket.io-client": "2.1.0"
+  },
+  "devDependencies": {
+    "babel-preset-react-native": "4.0.0",
+    "react-test-renderer": "16.3.1",
+    "babel": "6.23.0",
+    "babel-eslint": "8.2.2",
+    "flow-bin": "0.69.0",
+    "eslint-config-standard": "11.0.0",
+    "eslint-plugin-flowtype-errors": "3.5.1",
+    "eslint-plugin-import": "2.10.0",
+    "eslint-plugin-node": "6.0.1",
+    "eslint-plugin-promise": "3.7.0",
+    "eslint-plugin-react": "7.7.0",
+    "eslint-plugin-react-native": "^3.2.1",
+    "eslint-plugin-standard": "3.0.1"
+  }
+}
