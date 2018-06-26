@@ -24,8 +24,8 @@ export default () => {
   Navigation.registerComponent('Screen4', () => Screen4, storeRedux, Provider)
 
   checkLocalStoreToRedux(storeRedux, KEYSTORE.LOGINED, actions.setLogined, init.isLogined)
-  checkLocalStoreToRedux(storeRedux, KEYSTORE.LANGUAGE, actions.setLanguage, init.currency)
-  checkLocalStoreToRedux(storeRedux, KEYSTORE.CURRENCY, actions.setCurrency, init.language)
+  checkLocalStoreToRedux(storeRedux, KEYSTORE.LANGUAGE, actions.setLanguage, init.language)
+  checkLocalStoreToRedux(storeRedux, KEYSTORE.CURRENCY, actions.setCurrency, init.currency)
   checkLocalStoreToRedux(storeRedux, KEYSTORE.INTERNET, actions.setInternet, init.internet)
 
   Navigation.startSingleScreenApp({

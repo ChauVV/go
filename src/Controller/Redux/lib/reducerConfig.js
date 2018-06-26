@@ -16,20 +16,7 @@ export const checkStore = async (data, KEYSTORE_DATA) => {
 
 export const checkLocalStoreToRedux = async (storeRedux, keyStore, action, initData) => {
   const data = await store.get(keyStore)
+  const temp = data || initData
 
-  const typeOfData = typeof (initData)
-
-  if (typeOfData === 'string' || typeOfData === 'number') {
-    data && data !== initData && storeRedux.dispatch(action(data))
-  } else if (typeOfData === 'boolean') {
-    data === true && storeRedux.dispatch(action(data))
-  } else if (typeOfData === 'object') {
-    if (Array.isArray(initData)) {
-      data === null
-        ? storeRedux.dispatch(action(initData))
-        : data.length > 0 && storeRedux.dispatch(action(data))
-    } else {
-      typeof (data) === 'object' && storeRedux.dispatch(action(data))
-    }
-  }
+  storeRedux.dispatch(action(temp))
 }

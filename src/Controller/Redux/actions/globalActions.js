@@ -1,8 +1,8 @@
 import key from '../lib/constants'
 import { checkStore } from '../lib/reducerConfig'
 import { KEYSTORE } from 'utils/globalConstants'
-// import { txtDefault, txtJapan } from 'utils/globalStyles'
-// import { setCustomText } from 'react-native-global-props'
+import { txtDefault } from 'utils/globalStyles'
+import { setCustomText } from 'react-native-global-props'
 
 export function setLogined (isLogined) {
   checkStore(isLogined, KEYSTORE.LOGINED)
@@ -14,9 +14,11 @@ export function setLogined (isLogined) {
 
 export function setLanguage (language) {
   checkStore(language, KEYSTORE.LANGUAGE)
-  // language === HBLOCALE.JP
+  // language === LOCALE.JP
   //   ? setCustomText({style: txtJapan})
   //   : setCustomText({style: txtDefault})
+  console.log('set text')
+  setCustomText({style: txtDefault})
   return {
     type: key.SET_LANGUAGE,
     payload: language
