@@ -13,9 +13,8 @@ import rootSaga from '../actionSaga/rootSaga'
 const sagaMiddleWare = createSagaMiddleWare()
 const middleWare = [sagaMiddleWare]
 middleWare.push(thunkMiddleware)
-console.log('add logger: ', (process.env['NODE_ENV'] === 'development'))
+
 if (process.env['NODE_ENV'] === 'development') {
-  console.log('add log')
   middleWare.push(logger)
 }
 
